@@ -1,6 +1,9 @@
+import Funções.adicionar_filmes
+
 print("NEREFLIX\n")
 
 option = int(input("escolha uma opção:\n"))
+
 
 print(
 "Opção 1 - Adicionar Filme:\n " \
