@@ -27,7 +27,3 @@ def adicionarFilmes():
 
     with open(caminho_json, "w", encoding="utf-8") as arquivo:
         json.dump(dados_existentes, arquivo, ensure_ascii=False, indent=4)
-
-adicionarFilmes()
-
-import Funções.adicionar_filmes as adicionar_filmes
