@@ -1,6 +1,7 @@
 import os
 import time
 from Funcoes.adicionar_filmes import adicionarFilmes
+from Funcoes.listar_filmes import listafilmes
 
 def menu ():
     print("NEREFLIX\n")
@@ -12,13 +13,17 @@ def menu ():
     "Opção 5 - sair\n" )
 
 menu()
-option = int(input("escolha uma opção:\n"))
-
-if option == 1:
-    adicionarFilmes()
-    print("filme adicionado")
-    time.sleep(3)
-    os.system("clear")
-
-if option == 5:
-    os.system("clear")
+def opcao ():
+    option = int(input("escolha uma opção:\n"))
+    if option == 1:
+        adicionarFilmes()
+        print("filme adicionado")
+        time.sleep(3)
+        os.system("clear")
+    if option == 5:
+        os.system("clear")
+    if option == 3:
+        listafilmes()
+        time.sleep(5)
+        os.system("clear")
+opcao()
