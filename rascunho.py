@@ -1,7 +1,7 @@
 import os
 import time
 from Funcoes.adicionar_filmes import adicionarFilmes
-from Funcoes.listar_filmes import listafilmes
+from Funcoes.modificar_filmes import listafilmes
 
 def menu ():
     print("NEREFLIX\n")
