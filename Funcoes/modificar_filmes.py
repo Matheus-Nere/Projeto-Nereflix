@@ -32,3 +32,5 @@ def modificar_filmes(filme):
                 json.dump(dados, arquivo, ensure_ascii=False, indent=4)
         else:
             print("filme não encontrado")
+
+modificar_filmes("mario")

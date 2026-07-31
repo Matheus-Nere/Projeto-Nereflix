@@ -1,7 +1,7 @@
 import os
 import time
 from Funcoes.adicionar_filmes import adicionarFilmes
-from Funcoes.modificar_filmes import listafilmes
+from Funcoes.modificar_filmes import modificar_filmes
 
 def menu ():
     print("NEREFLIX\n")
@@ -20,10 +20,13 @@ def opcao ():
         print("filme adicionado")
         time.sleep(3)
         os.system("clear")
+    if option == 2:
+        filme = str(input("Digite o nome do filme quer deseja modificar: \n"))
+        modificar_filmes(filme)
     if option == 5:
         os.system("clear")
     if option == 3:
-        listafilmes()
+        
         time.sleep(5)
         os.system("clear")
 opcao()

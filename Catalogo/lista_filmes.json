@@ -1,14 +1,20 @@
 [
     {
-        "nome": "mario",
-        "diretor": "galvao",
-        "genero": "drama",
-        "ano": "1998"
+        "nome": "mar",
+        "diretor": "gal",
+        "genero": "fant",
+        "ano": "98"
     },
     {
         "nome": "alice no pais das maravilhas",
         "diretor": "frank",
         "genero": "aventura",
         "ano": "1772"
+    },
+    {
+        "nome": "Mario",
+        "diretor": "Galvao",
+        "genero": "Terror",
+        "ano": "2001"
     }
 ]
