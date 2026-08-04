@@ -1,9 +1,13 @@
 import os
+import sys
 import json
 import time
 pasta_script = os.path.dirname(os.path.abspath(__file__))
 caminho_json = os.path.join(pasta_script, "..", "Catalogo", "lista_filmes.json")
 caminho_json = os.path.abspath(caminho_json)
+raiz_projeto = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(raiz_projeto)
+from final.rascunho import menu
 
 def listar ():
     with open(caminho_json, "r", encoding="utf-8") as arquivo:
@@ -26,11 +30,14 @@ def buscar ():
                 if saida:
                     buscar_filmes()
                 
-def sair ():
+def opcao_errada ():
     print()
     print("Opção invalida, digite o numero referente a opção escolhida.")
     time.sleep(1)
     buscar_filmes ()
+
+def sair ():
+    menu()
 
 def buscar_filmes ():
     print()
@@ -43,8 +50,10 @@ def buscar_filmes ():
         listar ()
     if opcao == "2":
         buscar ()
-    else:
+    if opcao == "3":
         sair()
+    else:
+        opcao_errada()
     buscar_filmes()
     
 buscar_filmes ()

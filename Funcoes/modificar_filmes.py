@@ -33,4 +33,3 @@ def modificar_filmes(filme):
         else:
             print("filme não encontrado")
 
-modificar_filmes("mario")

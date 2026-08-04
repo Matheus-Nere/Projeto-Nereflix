@@ -1,7 +1,14 @@
 import os
 import time
+import sys
+pasta_script = os.path.dirname(os.path.abspath(__file__))
+caminho_json = os.path.join(pasta_script, "..", "Catalogo", "lista_filmes.json")
+caminho_json = os.path.abspath(caminho_json)
+raiz_projeto = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(raiz_projeto)
 from Funcoes.adicionar_filmes import adicionarFilmes
 from Funcoes.modificar_filmes import modificar_filmes
+from Funcoes.buscar_filmes import buscar_filmes
 
 def menu ():
     print("NEREFLIX\n")
@@ -26,7 +33,6 @@ def opcao ():
     if option == 5:
         os.system("clear")
     if option == 3:
-        
-        time.sleep(5)
         os.system("clear")
+        buscar_filmes
 opcao()
