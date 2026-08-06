@@ -1,20 +1,25 @@
 import os
-import sys
 import json
 import time
 pasta_script = os.path.dirname(os.path.abspath(__file__))
 caminho_json = os.path.join(pasta_script, "..", "Catalogo", "lista_filmes.json")
 caminho_json = os.path.abspath(caminho_json)
-raiz_projeto = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(raiz_projeto)
-from final.rascunho import menu
 
 def listar ():
     with open(caminho_json, "r", encoding="utf-8") as arquivo:
         dados = json.load(arquivo)
         print(dados)
         saida = input("\npressione qualquer tecla para sair.")
+        buscar_filmes()
         
+
+def achar (dados, filme):
+    
+    for i in dados:
+        if i['nome'].lower() == filme.lower():
+           
+            filme_achado = i
+            return filme_achado
 
 
 
@@ -22,13 +27,14 @@ def buscar ():
     filme = str(input("\nDigite o nome do filme que deseja encontrar: \n"))
     with open(caminho_json, "r", encoding="utf-8") as arquivo:
         dados = json.load(arquivo)
-        for i in dados:
-            if i['nome'].lower() == filme.lower():
-               
-                print(i)
-                saida = input("\npressione qualquer tecla para sair.")
-                if saida:
-                    buscar_filmes()
+        filme_achado = achar(dados, filme)
+        if filme_achado and filme_achado["nome"].lower() == filme.lower():
+            print(filme_achado)
+            sair = input("\npressione qualquer tecla para sair.")
+        else:
+            print('Filme não encontrado')
+            time.sleep(1)
+
                 
 def opcao_errada ():
     print()
@@ -37,10 +43,10 @@ def opcao_errada ():
     buscar_filmes ()
 
 def sair ():
-    menu()
-
+    print()
 def buscar_filmes ():
     print()
+    opcao = None
     opcao = str(input(
     "1 - Listar todos os filmes\n\n" \
     "2 - Buscar um filme especifico\n\n" \
@@ -48,12 +54,12 @@ def buscar_filmes ():
     "Escolha uma das opções:\n\n" ))
     if opcao == "1":
         listar ()
-    if opcao == "2":
+    elif opcao == "2":
         buscar ()
-    if opcao == "3":
+    elif opcao == "3":
         sair()
     else:
         opcao_errada()
-    buscar_filmes()
     
-buscar_filmes ()
+    
+
