@@ -34,6 +34,7 @@ def buscar ():
         else:
             print('Filme não encontrado')
             time.sleep(1)
+            buscar_filmes()
 
                 
 def opcao_errada ():
