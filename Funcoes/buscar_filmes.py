@@ -7,9 +7,17 @@ caminho_json = os.path.abspath(caminho_json)
 
 def listar ():
     with open(caminho_json, "r", encoding="utf-8") as arquivo:
+        print()
         dados = json.load(arquivo)
-        print(dados)
+        os.system("clear")
+        for i in dados:
+            print(f"Nome: {i['nome'].title()}")
+            print(f"Diretor: {i['diretor'].title()}")
+            print(f"Gênero: {i['genero'].title()}")
+            print(f"Ano: {i['ano'].title()}")
+            print("-"*30)
         saida = input("\npressione qualquer tecla para sair.")
+        os.system("clear")
         buscar_filmes()
         
 
@@ -29,7 +37,13 @@ def buscar ():
         dados = json.load(arquivo)
         filme_achado = achar(dados, filme)
         if filme_achado and filme_achado["nome"].lower() == filme.lower():
-            print(filme_achado)
+            os.system("clear")
+            print("-"*30)
+            print(f"Nome: {filme_achado['nome'].title()}")
+            print(f"Diretor: {filme_achado['diretor'].title()}")
+            print(f"Gênero: {filme_achado['genero'].title()}")
+            print(f"Ano: {filme_achado['ano'].title()}")
+            print("-"*30)
             sair = input("\npressione qualquer tecla para sair.")
         else:
             print('Filme não encontrado')

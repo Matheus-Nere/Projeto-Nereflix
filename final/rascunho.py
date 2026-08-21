@@ -12,45 +12,53 @@ from Funcoes.buscar_filmes import buscar_filmes
 from Funcoes.excluir_filmes import excluir_filme
 
 def opcao ():
+    print()
     option = int(input("escolha uma opção:\n"))
-    if option == 1:
-        os.system("clear")
-        adicionarFilmes()
-        print("filme adicionado")
-        time.sleep(3)
-        os.system("clear")
-        menu()
-    if option == 2:
-        os.system("clear")
-        filme = str(input("Digite o nome do filme quer deseja modificar: \n"))
-        modificar_filmes(filme)
-        os.system("clear")
-        menu()
+    match option:
+        case 1:
+            os.system("clear")
+            adicionarFilmes()
+            print("filme adicionado")
+            time.sleep(3)
+            os.system("clear")
+            menu()
+        case 2:
+            os.system("clear")
+            filme = str(input("Digite o nome do filme quer deseja modificar: \n"))
+            modificar_filmes(filme)
+            os.system("clear")
+            menu()
+        case 3:
+            os.system("clear")
+            buscar_filmes()
+            os.system("clear")
+            menu()
+        case 4:
+            os.system("clear")
+            filme = str(input("Digite o nome do filme quer deseja excluir: \n"))
+            excluir_filme(filme)
+            os.system("clear")
+            menu()
+        case 5:
+          os.system("clear")
 
-    if option == 5:
-        os.system("clear")
         
-    if option == 3:
-        os.system("clear")
-        buscar_filmes()
-        os.system("clear")
-        menu()
-    if option == 4:
-        os.system("clear")
-        filme = str(input("Digite o nome do filme quer deseja excluir: \n"))
-        excluir_filme(filme)
-        os.system("clear")
-        menu()
         
 
 def menu ():
-    print("NEREFLIX\n")
-    print(
-    "Opção 1 - Adicionar Filme\n " \
-    "Opção 2 - Modificar Filme\n"  \
-    "Opção 3 - Buscar Filme\n" \
-    "Opção 4 - Excluir Filme\n" \
-    "Opção 5 - sair\n" )
+    print ("""
+    ╔═╗─╔╦═══╦═══╦═══╦═══╦╗──╔══╦═╗╔═╗
+    ║║╚╗║║╔══╣╔═╗║╔══╣╔══╣║──╚╣╠╩╗╚╝╔╝
+    ║╔╗╚╝║╚══╣╚═╝║╚══╣╚══╣║───║║─╚╗╔╝
+    ║║╚╗║║╔══╣╔╗╔╣╔══╣╔══╣║─╔╗║║─╔╝╚╗
+    ║║─║║║╚══╣║║╚╣╚══╣║──║╚═╝╠╣╠╦╝╔╗╚╗
+    ╚╝─╚═╩═══╩╝╚═╩═══╩╝──╚═══╩══╩═╝╚═╝""")
+    print("""
+    Opção 1 - Adicionar Filme
+    Opção 2 - Modificar Filme
+    Opção 3 - Buscar Filme
+    Opção 4 - Excluir Filme
+    Opção 5 - sair""")
     opcao()
 
 menu()
