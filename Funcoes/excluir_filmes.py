@@ -28,7 +28,7 @@ def excluir_filme (filme):
                 json.dump(dados_existentes, arquivo_escrita, ensure_ascii=False, indent=4)
     else:
             os.system("clear")
-            sai = input("Filme não encontrado. Se quiser buscar novamente digite 'Sim', caso deixe em branco e aperte 'Enter'': ")
+            sai = input("Filme não encontrado. Se quiser buscar novamente digite 'Sim', caso não deixe em branco e aperte 'Enter'': ")
             print()
             if sai.lower() == "sim":
                 filme = str(input("Digite o nome do filme quer deseja excluir: \n"))
